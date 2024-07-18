@@ -1,0 +1,20 @@
+[
+{
+  "directory": "D:/UFRGS/05 Fundamentos de Computação Gráfica/ufrgs-fcg/lab2-glm/src/build",
+  "command": "C:\\PROGRA~1\\CODEBL~1\\MinGW\\bin\\G__~1.EXE  @CMakeFiles/main.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\main.dir\\src\\main.cpp.obj -c \"D:\\UFRGS\\05 Fundamentos de Computação Gráfica\\ufrgs-fcg\\lab2-glm\\src\\src\\main.cpp\"",
+  "file": "D:/UFRGS/05 Fundamentos de Computação Gráfica/ufrgs-fcg/lab2-glm/src/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.obj"
+},
+{
+  "directory": "D:/UFRGS/05 Fundamentos de Computação Gráfica/ufrgs-fcg/lab2-glm/src/build",
+  "command": "C:\\PROGRA~1\\CODEBL~1\\MinGW\\bin\\G__~1.EXE  @CMakeFiles/main.dir/includes_CXX.rsp -g -std=c++11 -o CMakeFiles\\main.dir\\src\\textrendering.cpp.obj -c \"D:\\UFRGS\\05 Fundamentos de Computação Gráfica\\ufrgs-fcg\\lab2-glm\\src\\src\\textrendering.cpp\"",
+  "file": "D:/UFRGS/05 Fundamentos de Computação Gráfica/ufrgs-fcg/lab2-glm/src/src/textrendering.cpp",
+  "output": "CMakeFiles/main.dir/src/textrendering.cpp.obj"
+},
+{
+  "directory": "D:/UFRGS/05 Fundamentos de Computação Gráfica/ufrgs-fcg/lab2-glm/src/build",
+  "command": "C:\\PROGRA~1\\CODEBL~1\\MinGW\\bin\\gcc.exe  @CMakeFiles/main.dir/includes_C.rsp -g -o CMakeFiles\\main.dir\\src\\glad.c.obj -c \"D:\\UFRGS\\05 Fundamentos de Computação Gráfica\\ufrgs-fcg\\lab2-glm\\src\\src\\glad.c\"",
+  "file": "D:/UFRGS/05 Fundamentos de Computação Gráfica/ufrgs-fcg/lab2-glm/src/src/glad.c",
+  "output": "CMakeFiles/main.dir/src/glad.c.obj"
+}
+]
