@@ -39,8 +39,12 @@ void main()
     // normais de cada vértice.
     vec4 n = normalize(normal);
 
+    // Spotlight
+    vec4 spotlight_position = vec4(0.0,2.0,1.0,1.0);
+    vec4 spotlight_direction = vec4(0.0,-1.0,0.0,0.0);
+
     // Vetor que define o sentido da fonte de luz em relação ao ponto atual.
-    vec4 l = normalize(vec4(1.0,1.0,0.5,0.0));
+    vec4 l = normalize(spotlight_position - p);
 
     // Vetor que define o sentido da câmera em relação ao ponto atual.
     vec4 v = normalize(camera_position - p);
@@ -93,13 +97,25 @@ void main()
     vec3 Ia = vec3(0.2,0.2,0.2);
 
     // Termo difuso utilizando a lei dos cossenos de Lambert
-    vec3 lambert_diffuse_term = Kd * I * max(0, dot(n, l));
+    vec3 lambert_diffuse_term;
+    // Termo especular utilizando o modelo de iluminação de Phong
+    vec3 phong_specular_term;
+
+    // Calcula se ponto está no spotlight
+    float angle = dot(normalize(p - spotlight_position), normalize(spotlight_direction));
+    if (angle < cos(radians(30.0)))
+    {
+        lambert_diffuse_term = vec3(0.0,0.0,0.0);
+        phong_specular_term = vec3(0.0,0.0,0.0);
+    }
+    else
+    {
+        lambert_diffuse_term = Kd * I * max(0, dot(n, l));
+        phong_specular_term = Ks * I * pow(max(0, dot(r, v)), q);
+    }
 
     // Termo ambiente
     vec3 ambient_term = Ka * Ia;
-
-    // Termo especular utilizando o modelo de iluminação de Phong
-    vec3 phong_specular_term  = Ks * I * pow(max(0, dot(r, v)), q);
 
     // NOTE: Se você quiser fazer o rendering de objetos transparentes, é
     // necessário:
@@ -123,4 +139,3 @@ void main()
     // Veja https://en.wikipedia.org/w/index.php?title=Gamma_correction&oldid=751281772#Windows.2C_Mac.2C_sRGB_and_TV.2Fvideo_standard_gammas
     color.rgb = pow(color.rgb, vec3(1.0,1.0,1.0)/2.2);
 } 
-
